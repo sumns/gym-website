@@ -1,0 +1,64 @@
+.mainBox {
+  background-color: rgb(68, 20, 38);
+  color: white;
+}
+.innerBox {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.left img {
+  margin-top: 1rem;
+  width: 8rem;
+  height: 4rem;
+}
+thead,
+tbody {
+  padding: 2rem;
+  margin: 3rem;
+}
+.footList {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.icons {
+  font-size: 2rem;
+  display: flex;
+  gap: 1rem;
+}
+.icons a {
+  color: white;
+}
+
+@media only screen and (max-width: 822px ){
+  .innerBox{
+    flex-direction: column;
+    align-items: center;
+    padding: 0 2rem;
+  }
+  .left{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+  }
+  .left p{
+    margin: 1rem 2rem;
+    padding: 0;
+  }
+  .icons{
+    margin-bottom: 1rem;
+  }
+  .footList{
+    margin: 0 1rem;
+  }
+  .footList h4{
+    min-height: 2rem;
+    margin-bottom: 1rem;
+  }
+}

@@ -49,11 +49,6 @@ export function ImageSlider() {
     height: "100%",
   };
 
-  // const goToNext = (currentSlideIndex) => {
-  //   setCurrentSlideIndex(currentSlideIndex);
-  // };
-  // To be used for corausal 
-
   const pageToJoin = () => {
     navigate('./joining')
   }
@@ -66,19 +61,11 @@ export function ImageSlider() {
 
         <div className={style.description}>
           <h1>{slideData[currentSlideIndex].text}</h1>
-          {/* <p>{slideData[currentSlideIndex].body}</p> */}
           <Button name='Join With Us'
             onClick={pageToJoin}
           />
         </div>
-        {/* <div className={style.carousal}>
-        {slideData.map((slideData, currentSlideIndex) => (
-          <span
-            key={currentSlideIndex}
-            onClick={() => goToNext(currentSlideIndex)}
-          ></span>
-        ))}
-      </div> */}
+        
       </div>
     </div>
   );

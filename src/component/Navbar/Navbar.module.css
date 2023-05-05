@@ -14,8 +14,8 @@ nav{
     justify-content: space-evenly;
 }
 nav img{
-    width: 8rem;
-    height: 4rem;
+    width: 200px;
+    height: 100px;
 }
 
 nav ul{
@@ -64,9 +64,11 @@ color: red;
         align-items: center;
         list-style: none;
         position: absolute;
-        top: 4.2rem;
+        top: 100px;
         right: 0rem;
         padding: 1rem 0;
         background: linear-gradient(180deg, rgb(32, 32, 32), rgb(95, 94, 94));
+        height: 100vh;
+        transition: 1s;
     }
 }

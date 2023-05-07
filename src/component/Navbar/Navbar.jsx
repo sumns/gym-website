@@ -1,28 +1,74 @@
 import React from 'react'
 import { MdMenu } from "react-icons/md";
 import { useState } from 'react';
-import { Link } from 'react-router-dom'
-import Button from '../button/Button'
+import { Link, useNavigate } from 'react-router-dom'
+import Btn from '../button/Button'
+
+import Typography from '@mui/material/Typography';
+import Button from '@mui/material/Button';
+import Popover from '@mui/material/Popover';
+import PopupState, { bindTrigger, bindPopover } from 'material-ui-popup-state';
 
 import styles from './Navbar.module.css'
+import Logo from '../Logo/Logo';
 
 export default function Navbar() {
   const [menu, setMenu] = useState(false)
 
+  const navigate = useNavigate()
+
   function handleClick() {
     setMenu(!menu)
   }
+
+  function handleLogout(){
+    localStorage.removeItem('loggedInUser')
+    navigate('/signin')
+  }
+
+  const currentUser = JSON.parse(localStorage.getItem('loggedInUser'))
+
   return (
     <nav className={styles.navBar}>
-      <Link to={'/'}><img src="https://1000logos.net/wp-content/uploads/2021/07/Michigan-State-Spartans-logo.png" /></Link>
+      <Link to={'/'} className={styles.Logo}><Logo/></Link>
 
       <ul className={styles.listItems}>
         <li><Link to={'/'} className={styles.link}>Home</Link></li>
         <li><Link to={'/about'} className={styles.link}>AboutUs</Link></li>
-        <li><Link to={"/program"} className={styles.link}>Programs</Link></li>
-        <li><Link to={'/trainer'} className={styles.link}> Trainers</Link></li>
+        <li><Link to={'/trainer'} className={styles.link}>Trainers</Link></li>
         <li><Link to={'/pricing'} className={styles.link}>Pricing</Link></li>
-        <Link to={'/signin'}><Button name='Join Us' /></Link> 
+        <li><Link to={'/contact'} className={styles.link}>Contact Us</Link></li>
+
+        {
+          !currentUser ? 
+            <Link to={'/signin'}><Btn name='Join Us' /></Link> :
+            <PopupState variant="popover" popupId="demo-popup-popover">
+            {(popupState) => (
+              <div>
+                <Button variant="contained" {...bindTrigger(popupState)}>
+                  {currentUser.userName}
+                </Button>
+                <Popover
+                  {...bindPopover(popupState)}
+                  anchorOrigin={{
+                    vertical: 'bottom',
+                    horizontal: 'center',
+                  }}
+                  transformOrigin={{
+                    vertical: 'top',
+                    horizontal: 'center',
+                  }}
+                >
+                  <Typography sx={{ p: 2 }}>Profile</Typography>
+                  <Typography sx={{ p: 2 }}>Subscription</Typography>
+                  <hr/>
+                  <Typography sx={{ p: 2 }} onClick={handleLogout} >Logout</Typography>
+                </Popover>
+              </div>
+            )}
+          </PopupState>
+        }
+        
       </ul>
       
       <div className={styles.menuContainer}>
@@ -35,7 +81,7 @@ export default function Navbar() {
             <li><Link to={"/program"} className={styles.link}>Programs</Link></li>
             <li><Link to={'/trainer'} className={styles.link}> Trainers</Link></li>
             <li><Link to={'/pricing'} className={styles.link}>Pricing</Link></li>
-            <Link to={'/joining'}><Button name='Join Us' /></Link>
+            <Link to={'/joining'}><Btn name='Join Us' /></Link>
           </ul>
         }
       </div>

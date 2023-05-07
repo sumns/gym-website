@@ -13,9 +13,14 @@ nav{
     align-items: center;
     justify-content: space-evenly;
 }
-nav img{
-    width: 200px;
-    height: 100px;
+
+.Logo {
+    text-decoration: none;
+    font-size: 4rem;
+    background: -webkit-linear-gradient(#eee, #333);
+    -webkit-background-clip: text;
+    background-clip: text ;
+    -webkit-text-fill-color: transparent;
 }
 
 nav ul{
@@ -40,7 +45,7 @@ color: red;
     display: none;
 }
 
-@media only screen and (max-width: 831px){
+@media only screen and (max-width: 500px){
     .navBar{
         justify-content: space-between;
     }
@@ -58,17 +63,64 @@ color: red;
         align-items: center;
     }
     .hiddenMenu{
+        width: 40%;
         display: unset;
         display: flex;
         flex-direction: column;
-        align-items: center;
+        align-items: left;
         list-style: none;
         position: absolute;
-        top: 100px;
+        top: 76px;
         right: 0rem;
-        padding: 1rem 0;
+        padding: 1rem 2rem;
         background: linear-gradient(180deg, rgb(32, 32, 32), rgb(95, 94, 94));
         height: 100vh;
-        transition: 1s;
+    }
+    .hiddenMenu li{
+        padding-bottom: 20px;
+        font-size: 18px;
+    }
+    .hiddenMenu a{
+        margin: 0;
+    }
+}
+
+@media only screen and (500px < width < 900px){
+    .navBar{
+        justify-content: space-between;
+    }
+    .menu{
+        display: unset;
+        color: white;
+    }
+    .listItems{
+        display: none;
+    }
+    .menuContainer{
+        display: flex;
+        flex-direction: column;
+        /* justify-content: center; */
+        align-items: center;
+    }
+    .hiddenMenu{
+        width: 40%;
+        display: unset;
+        display: flex;
+        flex-direction: column;
+        align-items: left;
+        list-style: none;
+        position: absolute;
+        top: 77px;
+        right: 0rem;
+        padding: 2rem 2rem ;
+        background: linear-gradient(180deg, rgb(32, 32, 32), rgb(95, 94, 94));
+        height: 100vh;
+    }
+    .hiddenMenu li{
+        padding-bottom: 26px;
+        font-size: 22px;
+    }
+    .hiddenMenu a{
+        margin: 0;
     }
 }

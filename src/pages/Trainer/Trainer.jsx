@@ -36,7 +36,7 @@ export default function Trainer() {
     <div className={TS.trainer_mainBackground}>
       <Background heading='OUR COACH' imgUrl={img} />
 
-      {/* <TrainerMain show={false} /> */}
+      
       <section className={TS.coach_section}>
         <h3>OUR TEAM</h3>
         <h1>TRAIN WITH EXPERTS</h1>

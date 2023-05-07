@@ -8,11 +8,16 @@
   align-items: center;
 }
 
-.left img {
-  margin-top: 1rem;
-  width: 8rem;
-  height: 4rem;
+.FooterLogo {
+  text-decoration: none;
+  color: aqua;
+  font-size: 4rem;
+  background: -webkit-linear-gradient(#eee, #333);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  z-index: 10;
 }
+
 thead,
 tbody {
   padding: 2rem;

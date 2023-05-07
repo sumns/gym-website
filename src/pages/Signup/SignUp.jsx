@@ -90,9 +90,9 @@ export default function SignUpPage() {
           <div className={signUp.buttonDiv}>
             <p className={signUp.registerLink}>
               Already have an account.
-              <Link to="/" className={signUp.link}>SignIn</Link>
+              <Link to="/signin" className={signUp.link}>SignIn</Link>
             </p>
-            <button className={signUp.button}>SignUp</button>
+            <button type='submit' className={signUp.button}>SignUp</button>
           </div>
         </form>
       </div>

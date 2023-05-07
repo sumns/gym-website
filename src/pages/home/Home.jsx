@@ -46,7 +46,8 @@ export function ImageSlider() {
     backgroundImage: `url(${slideData[currentSlideIndex].url})`,
     backgroundPosition: "center",
     backgroundSize: "cover",
-    height: "100%",
+    height: "100vh",
+    opacity: '0.7',
   };
 
   const pageToJoin = () => {
@@ -56,11 +57,10 @@ export function ImageSlider() {
   return (
     <div className={style.containerStyles}>
       <div style={bgImageStyle}></div>
-      <div className={style.transparentBackground}></div>
       <div className={style.des_carousal}>
 
         <div className={style.description}>
-          <h1>{slideData[currentSlideIndex].text}</h1>
+          <h1 style={{color: 'rgb(68, 20, 38)'}} >{slideData[currentSlideIndex].text}</h1>
           <Button name='Join With Us'
             onClick={pageToJoin}
           />

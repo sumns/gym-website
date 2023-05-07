@@ -1,20 +1,19 @@
-import { Link } from "react-router-dom";
+
 import {SiFacebook} from 'react-icons/si'
 import {BsInstagram} from 'react-icons/bs'
 import {AiFillTwitterCircle} from 'react-icons/ai'
 import styles from "./Footer.module.css";
+import Logo from '../Logo/Logo';
 
 export default function Footer() {
   return (
     <div className={styles.mainBox}>
       <div className={styles.innerBox}>
         <div className={styles.left}>
-          <Link to={"/"}>
-            <img
-              src="https://1000logos.net/wp-content/uploads/2021/07/Michigan-State-Spartans-logo.png"
-              alt="spartanFitness"
-            />
-          </Link>
+          <div className={styles.FooterLogo}>
+            <Logo/>
+          </div>
+          
           <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
           <div className={styles.icons}>
             <a href="https://www.facebook.com" target="_blank" rel="noreferrer"><SiFacebook/></a>

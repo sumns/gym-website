@@ -56,7 +56,7 @@ export default function SignIn() {
       if (foundUser) {
         localStorage.setItem("loggedInUser", JSON.stringify(foundUser));
         alert("You have successfully signed in.");
-        nav("/home");
+        nav("/");
       } else {
         alert("Incorrect email or password.");
       }

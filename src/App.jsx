@@ -8,7 +8,7 @@ import Trainer from "./pages/Trainer/Trainer";
 import Pricing from "./pages/Pricing/Pricing";
 import ContactUs from "./pages/Contact/ContactUs";
 import Signup from "./pages/Signup/SignUp";
-import SignIn from './pages/SignIn/SignIn';
+import SignIn from './pages/Signin/SignIn';
 
 
 
